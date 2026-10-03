@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NAYA</title>
-<meta name="description" content="NAYA — música, sociología, movimiento y producción cultural. Y amigable a todo tipo de expresión artística.">
+<title>Ramiro Naya</title>
+<link rel="icon" type="image/png" href="creoquenaya/assets/img/icon-mark.png">
+<meta name="description" content="Ramiro Naya — música, sociología, movimiento y producción cultural. Y amigable a todo tipo de expresión artística.">
 <meta name="theme-color" content="#0b0a0a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,7 @@
 <style>
   :root{
     --bg:#0b0a0a; --text:#f2ede4; --text-muted:#a89d8e; --text-faint:#6f665c;
-    --gold:#e8b04a; --terra:#c14a63; --sand:#cbb389;
+    --gold:#e8b04a; --gold-soft:#8a6c2f; --terra:#c14a63; --sand:#cbb389;
     --font-display:"Fraunces",ui-serif,Georgia,serif;
     --font-poster:"Anton",ui-sans-serif,sans-serif;
     --font-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
@@ -22,10 +23,7 @@
   html,body{ height:100%; margin:0; }
   body{ background:var(--bg); color:var(--text); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
 
-  a.portada{
-    position:relative; display:flex; align-items:center; min-height:100svh; overflow:hidden;
-    color:inherit; text-decoration:none;
-  }
+  .portada{ position:relative; display:flex; align-items:center; min-height:100svh; overflow:hidden; }
   .portada-bg{ position:absolute; inset:0; z-index:0; }
   .portada-bg img{ width:100%; height:100%; object-fit:cover; object-position:50% 60%; }
   .portada-bg::after{
@@ -34,24 +32,34 @@
       linear-gradient(90deg, rgba(11,10,10,.88) 0%, rgba(11,10,10,.55) 42%, rgba(11,10,10,.05) 70%),
       linear-gradient(180deg, rgba(11,10,10,.35) 0%, rgba(11,10,10,0) 30%, rgba(11,10,10,.6) 100%);
   }
-  .portada-copy{ position:relative; z-index:1; width:100%; max-width:1180px; margin:0 auto; padding:5rem 1.5rem; }
-  @media (min-width:900px){ .portada-copy{ padding:5rem 3rem; } }
-  .inner{ max-width:34rem; }
+  .portada-copy{ position:relative; z-index:1; width:100%; max-width:1180px; margin:0 auto; padding:4rem 1.5rem; }
+  @media (min-width:900px){ .portada-copy{ padding:4rem 3rem; } }
+  .inner{ max-width:44rem; }
 
   .kicker{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:.8rem; margin-bottom:1.1rem; }
   .kicker::before{ content:""; width:2.5rem; height:1px; background:var(--gold); }
 
-  .title{ font-family:var(--font-poster); font-weight:400; text-transform:uppercase; line-height:.8; letter-spacing:-.015em; margin:0; font-size:clamp(6rem,24vw,13rem); color:var(--gold); }
+  .title{ font-family:var(--font-poster); font-weight:400; text-transform:uppercase; line-height:.8; letter-spacing:-.015em; margin:0; }
+  .title .l1{ display:block; font-size:clamp(2.2rem,7vw,4.4rem); color:var(--text); opacity:.92; margin-bottom:.12em; }
+  .title .l2{ display:block; font-size:clamp(6rem,24vw,13rem); color:var(--gold); }
   .title .out{ color:transparent; -webkit-text-stroke:1.5px var(--gold); }
 
   .role{ font-family:var(--font-display); font-style:italic; font-size:clamp(1.05rem,2.2vw,1.5rem); color:var(--terra); margin:1.1rem 0 0; }
   .sub{ font-family:var(--font-display); font-style:italic; font-size:clamp(.9rem,1.6vw,1.1rem); color:var(--text-muted); margin:.3rem 0 0; }
-
   .thesis{ margin:1.8rem 0 0; padding-left:1rem; border-left:2px solid var(--terra); font-size:clamp(.98rem,1.4vw,1.12rem); line-height:1.55; max-width:32ch; }
 
-  .enter{ display:inline-flex; align-items:center; gap:.7rem; margin-top:2.2rem; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); border:1px solid #8a6c2f; padding:.7rem 1.1rem; transition:background .15s,color .15s; }
-  a.portada:hover .enter, a.portada:focus-visible .enter{ background:var(--gold); color:#1a1408; }
-  @media (prefers-reduced-motion:no-preference){ .enter span{ display:inline-block; transition:transform .2s; } a.portada:hover .enter span{ transform:translateX(4px); } }
+  .doors{ display:grid; grid-template-columns:1fr; gap:.8rem; margin-top:2.2rem; }
+  @media (min-width:640px){ .doors{ grid-template-columns:1fr 1fr; gap:1rem; } }
+  .door{ display:flex; flex-direction:column; gap:.35rem; padding:1.1rem 1.2rem 1.15rem; border:1px solid var(--gold-soft); background:rgba(11,10,10,.55); backdrop-filter:blur(4px); color:inherit; text-decoration:none; transition:background .15s,border-color .15s; }
+  .door .k{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-faint); }
+  .door .t{ font-family:var(--font-poster); text-transform:uppercase; font-size:clamp(1.5rem,3.4vw,2rem); line-height:1; color:var(--gold); }
+  .door .d{ font-size:.82rem; color:var(--text-muted); }
+  .door .go{ margin-top:.5rem; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .door:hover, .door:focus-visible{ background:var(--gold); border-color:var(--gold); }
+  .door:hover .k, .door:focus-visible .k{ color:#4a3a14; }
+  .door:hover .t, .door:focus-visible .t{ color:#1a1408; }
+  .door:hover .d, .door:focus-visible .d{ color:#3a2d10; }
+  .door:hover .go, .door:focus-visible .go{ color:#1a1408; }
 
   @media (max-width:640px){
     .portada-bg::after{ background:linear-gradient(180deg, rgba(11,10,10,.55) 0%, rgba(11,10,10,.72) 100%); }
@@ -59,18 +67,31 @@
 </style>
 </head>
 <body>
-  <a class="portada" href="creoquenaya/" aria-label="Entrar al sitio de NAYA">
+  <main class="portada">
     <div class="portada-bg"><img src="assets/portada.jpg" alt=""></div>
     <div class="portada-copy">
       <div class="inner">
         <div class="kicker">2026</div>
-        <h1 class="title">NA<span class="out">YA</span></h1>
+        <h1 class="title"><span class="l1">Ramiro</span><span class="l2">NA<span class="out">YA</span></span></h1>
         <p class="role">música · sociología · movimiento · producción cultural</p>
         <p class="sub">y amigable a todo tipo de expresión artística</p>
         <p class="thesis">Músico, productor cultural, DJ, investigador, docente y donde nos lleve todo eso…</p>
-        <span class="enter">Entrar <span>→</span></span>
+        <nav class="doors" aria-label="Elegí por dónde entrar">
+          <a class="door" href="creoquenaya/">
+            <span class="k">NAYA</span>
+            <span class="t">Música</span>
+            <span class="d">DJ · producción · gestión cultural · clases</span>
+            <span class="go">Entrar →</span>
+          </a>
+          <a class="door" href="creoquenaya/sociologia-y-educacion.html">
+            <span class="k">Ramiro Naya</span>
+            <span class="t">Sociología y educación</span>
+            <span class="d">Docencia · investigación · consultoría</span>
+            <span class="go">Entrar →</span>
+          </a>
+        </nav>
       </div>
     </div>
-  </a>
+  </main>
 </body>
 </html>
