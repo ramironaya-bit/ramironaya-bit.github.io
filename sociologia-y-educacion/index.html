@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ramiro Naya — Sociología y educación</title>
+<link rel="icon" type="image/png" href="assets/img/icon-mark.png">
+<meta name="description" content="Ramiro Naya. Sociólogo (UBA). Docencia, investigación y consultoría en educación y formación técnico profesional.">
+<link rel="canonical" href="https://ramironaya-bit.github.io/sociologia-y-educacion/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ramiro Naya">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Ramiro Naya — Sociología y educación">
+<meta property="og:description" content="Sociólogo (UBA). Docencia, investigación y consultoría en educación y formación técnico profesional.">
+<meta property="og:url" content="https://ramironaya-bit.github.io/sociologia-y-educacion/">
+<meta property="og:image" content="https://ramironaya-bit.github.io/assets/portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4EFE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4EFE6; --bg-raised:#EBE4D6; --bg-feature:#EDE6D8;
+    --line:#D9D1C3; --line-soft:#E4DDCF;
+    --text:#1E1B18; --text-muted:#5F584F; --text-faint:#7A7368;
+    --accent:#1F3A5F; --accent-soft:#8FA3BF; --terra:#B5563A; --terra-deep:#8E4129; --lede:#3E3A34;
+    --max:1180px;
+    --font-display:"Fraunces",ui-serif,Georgia,serif;
+    --font-poster:"Anton",ui-sans-serif,sans-serif;
+    --font-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,"SF Mono",monospace;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ animation-duration:.001ms!important; transition-duration:.001ms!important; } }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  h1,h2,h3{ font-family:var(--font-display); font-weight:450; text-wrap:balance; margin:0; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 1.5rem; position:relative; }
+  @media (min-width:900px){ .wrap{ padding:0 3rem; } }
+
+  /* ---------- nav ---------- */
+  nav.topnav{ position:sticky; top:0; z-index:60; background:rgba(244,239,230,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav.topnav .inner{ max-width:var(--max); margin:0 auto; padding:.8rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1.4rem; overflow-x:auto; scrollbar-width:none; }
+  nav.topnav .inner::-webkit-scrollbar{ display:none; }
+  nav.topnav .brand{ font-family:var(--font-poster); font-size:1.15rem; letter-spacing:.04em; text-transform:uppercase; transform:skewX(-7deg); white-space:nowrap; text-decoration:none; }
+  nav.topnav .brand span{ color:var(--accent); }
+  nav.topnav ul{ list-style:none; display:flex; gap:1.4rem; margin:0; padding:0; white-space:nowrap; }
+  nav.topnav ul a{ text-decoration:none; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); padding:.25rem 0; border-bottom:1px solid transparent; }
+  nav.topnav ul a:hover, nav.topnav ul a.active{ color:var(--text); border-color:var(--accent); }
+
+  /* ---------- portada de la página ---------- */
+  header.intro{ position:relative; background:var(--bg-feature); border-bottom:1px solid var(--line); }
+  header.intro .wrap{ padding-top:7rem; padding-bottom:3.4rem; }
+  .kicker{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:.7rem; margin-bottom:1rem; }
+  .kicker::before{ content:""; width:2.5rem; height:1px; background:var(--accent); }
+  .title{ font-family:var(--font-poster); font-weight:400; text-transform:uppercase; line-height:1.16; letter-spacing:-.01em; font-size:clamp(3rem,10vw,7.2rem); margin:0; }
+  .title .out{ color:transparent; -webkit-text-stroke:1.6px var(--accent); }
+  .lede{ font-family:var(--font-display); font-style:italic; font-size:clamp(1.05rem,2.2vw,1.45rem); color:var(--lede); margin:1.2rem 0 0; max-width:38ch; }
+  .bridge{ margin:2.2rem 0 0; max-width:60ch; color:var(--text-muted); border-left:2px solid var(--terra); padding-left:1rem; }
+  .bridge a{ color:var(--accent); text-underline-offset:3px; }
+
+  /* ---------- secciones de texto ---------- */
+  section{ position:relative; scroll-margin-top:3.2rem; border-bottom:1px solid var(--line); }
+  .body{ padding:3.6rem 0 4.4rem; }
+  .sec-head{ margin-bottom:2.2rem; }
+  .sec-num{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.2em; color:var(--accent); display:flex; align-items:center; gap:.7rem; margin-bottom:.6rem; }
+  .sec-num::before{ content:""; width:2.5rem; height:1px; background:var(--accent); }
+  .sec-title{ font-family:var(--font-poster); font-weight:400; text-transform:uppercase; line-height:.9; font-size:clamp(2.4rem,6vw,4.2rem); margin:0; }
+
+  .cols{ display:grid; grid-template-columns:1fr; gap:3rem; }
+  @media (min-width:900px){ .cols{ grid-template-columns:1fr 1fr; gap:3rem 4rem; } .cols.wide-left{ grid-template-columns:7fr 5fr; } .cols.photo-left{ grid-template-columns:4fr 8fr; gap:3rem; } .c-wide{ grid-column:1 / -1; } }
+  .gh{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; color:var(--terra); display:flex; align-items:center; gap:.7rem; margin:0 0 .5rem; }
+  .gh::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .note{ color:var(--text-muted); font-size:.95rem; margin:0 0 1rem; max-width:60ch; }
+
+  .lk{ display:grid; grid-template-columns:1fr auto; gap:.15rem 1rem; align-items:baseline; padding:.95rem 0; border-top:1px solid var(--line-soft); text-decoration:none; }
+  .lk:first-of-type{ border-top:none; }
+  .lk-t{ font-family:var(--font-display); font-size:1.15rem; line-height:1.25; }
+  .lk-d{ grid-column:1; font-size:.86rem; color:var(--text-muted); max-width:62ch; }
+  .lk-m{ grid-column:1; font-family:var(--font-mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint); margin-top:.15rem; }
+  .lk-a{ grid-column:2; grid-row:1 / span 3; align-self:center; font-family:var(--font-mono); color:var(--accent-soft); transition:transform .15s,color .15s; }
+  a.lk:hover .lk-t{ color:var(--accent); }
+  a.lk:hover .lk-a{ color:var(--accent); transform:translate(2px,-2px); }
+  .lk.plain{ grid-template-columns:1fr; }
+  .lk.plain .lk-t{ color:var(--text); }
+  .lk .sub{ grid-column:1; display:flex; flex-wrap:wrap; gap:.4rem .9rem; margin-top:.3rem; }
+  .lk .sub a{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft); }
+  .lk .sub a:hover{ color:var(--text); }
+
+  .photo{ margin:0; position:relative; }
+  .polaroid{ background:#FBF8F2; padding:9px 9px 30px; box-shadow:0 10px 26px rgba(30,27,24,.22); transform:rotate(-2deg); width:min(300px,78vw); align-self:start; }
+  .polaroid img{ width:100%; height:auto; }
+  .polaroid figcaption{ position:absolute; left:0; right:0; bottom:8px; text-align:center; color:#4a3f30; font-family:var(--font-mono); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; }
+
+  /* ---------- clases ---------- */
+  .clases-grid{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (min-width:700px){ .clases-grid{ grid-template-columns:repeat(2,1fr); } }
+  .clases-grid + .gh{ margin-top:2.6rem; }
+  @media (min-width:900px){ .clases-grid.tres{ grid-template-columns:repeat(3,1fr); } }
+  .clase{ background:var(--bg); padding:1.6rem 1.3rem 1.4rem; display:flex; flex-direction:column; gap:.5rem; min-height:10rem; text-decoration:none; transition:background .15s; }
+  a.clase:hover{ background:var(--bg-raised); }
+  .clase .n{ font-family:var(--font-mono); font-size:.68rem; color:var(--text-faint); }
+  .clase .t{ font-family:var(--font-poster); text-transform:uppercase; font-size:1.7rem; line-height:1; }
+  .clase .t.largo{ font-size:1.3rem; line-height:1.08; }
+  a.clase:hover .t{ color:var(--accent); }
+  .clase .d{ font-size:.85rem; color:var(--text-muted); }
+  .clase .go{ margin-top:auto; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }
+
+  /* ---------- contacto ---------- */
+  .c-list{ display:flex; flex-direction:column; gap:1.3rem; }
+  .c-list a{ font-family:var(--font-display); font-size:clamp(1.4rem,4vw,2.3rem); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:.5rem; align-self:flex-start; transition:color .15s,border-color .15s; }
+  .c-list a:hover{ color:var(--accent); border-color:var(--accent-soft); }
+  .c-list.compact a{ font-size:clamp(1.1rem,3.6vw,1.7rem); overflow-wrap:anywhere; }
+  .c-list .k{ display:block; font-family:var(--font-mono); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); margin-bottom:.3rem; }
+
+  .chips{ list-style:none; margin:.2rem 0 0; padding:0; display:flex; flex-wrap:wrap; gap:.4rem .45rem; }
+  .chips li{ font-size:.82rem; line-height:1.3; color:var(--text-muted); border:1px solid var(--line); background:var(--bg-raised); padding:.28rem .65rem; }
+  .chips li b{ font-weight:500; color:var(--text); }
+  .block + .block{ margin-top:2rem; }
+
+  footer{ text-align:center; padding:2rem 1.5rem 2.4rem; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-faint); }
+  footer a{ color:var(--text-muted); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:.1rem; margin-left:.4rem; transition:color .15s,border-color .15s; }
+  footer a:hover{ color:var(--accent); border-color:var(--accent-soft); }
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Secciones">
+  <div class="inner">
+    <a class="brand" href="../" aria-label="Volver a la portada">Ramiro Naya<span>.</span></a>
+    <ul>
+      <li><a href="#docencia">Docencia</a></li>
+      <li><a href="#investigacion">Investigación</a></li>
+      <li><a href="#consultoria">Consultoría</a></li>
+      <li><a href="#clases">Clases</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="intro">
+  <div class="wrap">
+    <div class="kicker">Ramiro Naya</div>
+    <h1 class="title">Sociología<br><span class="out">y educación</span></h1>
+    <p class="lede">Sociólogo por la Universidad de Buenos Aires. Docente, investigador y consultor en educación y formación técnico profesional.</p>
+    <p class="bridge">Interpelar a un grupo durante un tiempo compartido —un aula, un club, una investigación— es el oficio que atraviesa todo lo que hace. <a href="../creoquenaya/">Ver la parte de música →</a></p>
+  </div>
+</header>
+
+<!-- ============ 01 · DOCENCIA ============ -->
+<section id="docencia">
+  <div class="body"><div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <h2 class="sec-title">Docencia</h2>
+    </div>
+    <div class="cols photo-left">
+      <figure class="photo polaroid"><img src="assets/img/academico-tinta.jpg" alt=""><figcaption>Encuentro académico</figcaption></figure>
+      <div>
+        <h3 class="gh">Universitaria</h3>
+        <div class="lk plain"><span class="lk-t">Universidad Pedagógica Nacional (UNIPE)</span><span class="lk-m">2021 — 2026</span><span class="lk-d">Docente titular de la Licenciatura en Educación y Formación Técnica y Profesional, con orientación en gestión.</span></div>
+
+        <h3 class="gh" style="margin-top:1.8rem">Superior</h3>
+        <div class="lk plain"><span class="lk-t">Universidad Pedagógica Nacional (UNIPE)</span><span class="lk-m">2026</span><span class="lk-d">Trabajo Integrador Final, Tecnicatura Superior en Educación Técnico Profesional.</span></div>
+        <div class="lk plain"><span class="lk-t">Universidad Pedagógica Nacional (UNIPE)</span><span class="lk-m">2021 — 2024</span><span class="lk-d">Docente titular de la Tecnicatura Superior en Educación Técnico Profesional.</span></div>
+
+        <h3 class="gh" style="margin-top:1.8rem">Secundaria</h3>
+        <div class="lk plain"><span class="lk-t">Instituto Ricardo Güiraldes, Banfield</span><span class="lk-m">2013 — 2023</span><span class="lk-d">Docente titular de Historia, de 2.º a 5.º año. Diez años.</span></div>
+        <div class="lk plain"><span class="lk-t">Escuela Superior de Comercio Carlos Pellegrini (UBA)</span><span class="lk-m">2015</span><span class="lk-d">Prácticas docentes de nivel medio: Sociología, 5.º año.</span></div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 02 · INVESTIGACIÓN ============ -->
+<section id="investigacion">
+  <div class="body"><div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <h2 class="sec-title">Investigación</h2>
+    </div>
+    <div class="cols">
+
+      <div class="c-wide">
+        <p class="note">Integrante del equipo de investigación en formación docente de la UNIPE.</p>
+      </div>
+
+      <div>
+        <h3 class="gh">Publicaciones</h3>
+        <div class="lk plain">
+          <span class="lk-t">Formación Docente Inicial y Continua en Educación y Formación Técnica y Profesional en Argentina: análisis de las políticas desarrolladas en el período 2015-2025</span>
+          <span class="lk-d">Coautoría con Irma Briasco, Anabela Ghilini y Susana Ibañez. «del prudente Saber y el máximo posible de Sabor», n.º 23 (UNER, 2026).</span>
+          <span class="sub">
+            <a href="https://pcient.uner.edu.ar/index.php/dps/article/view/2438/2818" target="_blank" rel="noopener">Texto completo ↗</a>
+            <a href="https://www.fcedu.uner.edu.ar/del-prudente-saber-publico-el-numero-23/" target="_blank" rel="noopener">Número 23 ↗</a>
+            <a href="https://doi.org/10.33255/26184141/2438e0071" target="_blank" rel="noopener">DOI ↗</a>
+          </span>
+        </div>
+        <a class="lk" href="https://www.inet.edu.ar/wp-content/uploads/2015/11/Evaluacion-de-Capacidades-Profesionales.pdf" target="_blank" rel="noopener">
+          <span class="lk-t">Evaluación de capacidades profesionales en la ETP</span>
+          <span class="lk-d">Coautoría. Documento aprobado por la Resolución 266/15 del Consejo Federal de Educación.</span>
+          <span class="lk-a">↗</span>
+        </a>
+        <div class="lk plain">
+          <span class="lk-t">¡Anticiparse hace la diferencia! ¿Qué nos cuentan los números sobre los riesgos laborales?</span>
+          <span class="lk-d">Guías de estudio para docentes, elaboradas desde el INET en el marco de la estrategia nacional Seguimos Educando (2020).</span>
+        </div>
+        <a class="lk" href="https://unipe.edu.ar/cegopp/images/phocadownload/caracterizacion_del_sector_metalmecanica.pdf" target="_blank" rel="noopener">
+          <span class="lk-t">Caracterización del sector metalmecánica</span>
+          <span class="lk-d">UNIPE junto a UOM La Matanza. Programa de la Secretaría de Políticas Universitarias (2021).</span>
+          <span class="lk-a">↗</span>
+        </a>
+      </div>
+
+      <div>
+        <h3 class="gh">Congresos y registros</h3>
+        <a class="lk" href="https://congresos.untref.edu.ar/event/1/contributions/613/attachments/680/707/615.pdf" target="_blank" rel="noopener">
+          <span class="lk-t">Dispositivos pedagógicos y curriculares en la formación universitaria para la EFTP: aportes desde la UNIPE</span>
+          <span class="lk-d">Resumen aprobado, con Irma Briasco y Susana Ibañez. X Encuentro Nacional / VII Latinoamericano «La Universidad como Objeto de Investigación», UNTREF, 4 al 7 de agosto de 2026.</span>
+          <span class="lk-a">↗</span>
+        </a>
+        <a class="lk" href="https://unipe.edu.ar/cegopp/publicaciones" target="_blank" rel="noopener">
+          <span class="lk-t">Publicaciones del CEGOPP</span>
+          <span class="lk-d">UNIPE.</span>
+          <span class="lk-a">↗</span>
+        </a>
+        <a class="lk" href="https://bicyt.conicet.gov.ar/fichas/produccion/13243188" target="_blank" rel="noopener">
+          <span class="lk-t">Ficha de producción en CONICET (BICYT)</span>
+          <span class="lk-d">Registro de la producción en el repositorio institucional.</span>
+          <span class="lk-a">↗</span>
+        </a>
+        <a class="lk" href="https://orcid.org/0009-0006-6679-8969" target="_blank" rel="noopener">
+          <span class="lk-t">ORCID</span>
+          <span class="lk-d">0009-0006-6679-8969</span>
+          <span class="lk-a">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 03 · CONSULTORÍA ============ -->
+<section id="consultoria">
+  <div class="body"><div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <h2 class="sec-title">Consultoría</h2>
+    </div>
+    <div class="cols">
+      <div class="c-wide">
+        <p class="note">Desde 2011, consultor en organismos nacionales, jurisdiccionales e internacionales, y hace más de una década en las redes federales de Educación y Formación Técnico Profesional.</p>
+      </div>
+      <div>
+        <div class="lk plain">
+          <span class="lk-t">Instituto Nacional de Educación Tecnológica (INET)</span>
+          <span class="lk-m">Desde 2015</span>
+          <span class="lk-d">Perfiles profesionales, marcos de referencia, entrevistas a informantes clave y mesas federales.</span>
+        </div>
+      </div>
+      <div>
+        <div class="lk plain">
+          <span class="lk-t">Ministerio de Educación de la Ciudad de Buenos Aires</span>
+          <span class="lk-m">2019 — 2025</span>
+          <span class="lk-d">Representante en comisiones evaluadoras de planes de estudio.</span>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 04 · CLASES ============ -->
+<section id="clases">
+  <div class="body"><div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <h2 class="sec-title">Clases</h2>
+    </div>
+    <div class="clases-grid">
+      <a class="clase" href="clase.html?m=sociologia">
+        <span class="n">01</span><span class="t">Sociología</span>
+        <span class="d">Herramientas para leer lo social.</span>
+        <span class="go">Entrar →</span>
+      </a>
+      <a class="clase" href="clase.html?m=historia">
+        <span class="n">02</span><span class="t">Historia</span>
+        <span class="d">Clases de historia, nivel secundario y más.</span>
+        <span class="go">Entrar →</span>
+      </a>
+    </div>
+
+    <h3 class="gh">UNIPE · materias</h3>
+    <div class="clases-grid tres">
+      <a class="clase" href="clase.html?m=sistemas-productivos">
+        <span class="n">03</span><span class="t largo">Sistemas Productivos en Argentina</span>
+        <span class="d">UNIPE.</span>
+        <span class="go">Entrar →</span>
+      </a>
+      <a class="clase" href="clase.html?m=contexto-tendencias">
+        <span class="n">04</span><span class="t largo">Contexto y Tendencias de la Educación para el Trabajo</span>
+        <span class="d">UNIPE.</span>
+        <span class="go">Entrar →</span>
+      </a>
+      <a class="clase" href="clase.html?m=practicas-profesionalizantes">
+        <span class="n">05</span><span class="t largo">Prácticas Profesionalizantes</span>
+        <span class="d">UNIPE.</span>
+        <span class="go">Entrar →</span>
+      </a>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 05 · CV ============ -->
+<section id="cv">
+  <div class="body"><div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <h2 class="sec-title">CV</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3 class="gh">Descargas</h3>
+        <a class="lk" href="https://docs.google.com/document/d/1PyBhxEp2Z6gj4rHN9dRQwGzrZC4YgaixhVLlqWcqqRQ/edit?usp=sharing" target="_blank" rel="noopener"><span class="lk-t">Completo</span><span class="lk-d">Google Doc</span><span class="lk-a">↗</span></a>
+        <a class="lk" href="https://drive.google.com/file/d/1nW0DKABsEHPIk9GHvWlO1ynRuEiXo630/view?usp=sharing" target="_blank" rel="noopener"><span class="lk-t">Docente</span><span class="lk-d">PDF</span><span class="lk-a">↗</span></a>
+      </div>
+      <div>
+        <h3 class="gh">Formación</h3>
+        <div class="lk plain"><span class="lk-t">Licenciatura en Sociología</span><span class="lk-m">2007 — 2013</span><span class="lk-d">Diploma de Honor. UBA, Facultad de Ciencias Sociales.</span></div>
+        <div class="lk plain"><span class="lk-t">Profesorado de Sociología</span><span class="lk-m">2015 — 2016</span><span class="lk-d">Promedio 10. UBA, Facultad de Ciencias Sociales.</span></div>
+        <div class="lk plain"><span class="lk-t">Maestría en Políticas y Administración de la Educación</span><span class="lk-m">2016 — 2019</span><span class="lk-d">UNTREF. Sin finalizar.</span></div>
+      </div>
+
+      <div class="c-wide">
+        <div class="block">
+          <h3 class="gh">Capacidades</h3>
+          <ul class="chips">
+            <li>Diseño y análisis de encuestas y entrevistas</li>
+            <li>Sistematización cualitativa y cuantitativa</li>
+            <li>Perfiles profesionales y marcos de referencia</li>
+            <li>Diseño curricular y evaluación de planes de estudio</li>
+            <li>Políticas educativas y formación técnico profesional</li>
+            <li>Informes, ponencias y artículos</li>
+            <li>Coordinación de equipos y de encuentros federales</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3 class="gh">Herramientas</h3>
+          <ul class="chips">
+            <li><b>SPSS</b></li>
+            <li><b>Atlas.ti</b></li>
+            <li><b>Moodle</b> · administración y diseño de actividades</li>
+            <li><b>Google</b> · Drive, Formularios, Classroom, Meet</li>
+            <li>Word, Excel, PowerPoint</li>
+            <li>Photoshop, Premiere, Nuendo</li>
+            <li>HTML, Visual Basic, C</li>
+            <li>Windows, Linux, Mac</li>
+            <li>CMS y redes sociales</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3 class="gh">Idiomas</h3>
+          <ul class="chips">
+            <li><b>Inglés</b> · lectura profesional, oralidad y escritura avanzadas · Trinity College London, Grade 3</li>
+            <li><b>Francés</b> · lectura avanzada, comprensión intermedia, oralidad y escritura básicas · CUI, nivel 4</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3 class="gh">Cursos y diplomaturas</h3>
+          <ul class="chips">
+            <li><b>2020</b> · Diplomatura en Administración Pública Remota (FOPECAP, UBA–INAP)</li>
+            <li>Monitoreo y Evaluación de Políticas Públicas</li>
+            <li>Evaluación de Políticas Públicas: conceptos, tipos y modelos</li>
+            <li>Diseño de proyectos con financiamiento multilateral</li>
+            <li>Metodologías Ágiles para la Gestión de Proyectos</li>
+            <li>Introducción a Ciencia de Datos</li>
+            <li>Gestión Pública Digital: estrategias en redes sociales</li>
+            <li>Edición básica de contenidos audiovisuales para redes sociales</li>
+            <li>Hacia una Gestión Colaborativa de Conflictos</li>
+            <li>Administración Financiera del Sector Público Nacional</li>
+            <li>Integridad y Transparencia: ética pública y participación social</li>
+            <li>Ley Micaela · Ley Yolanda · Violencia contra niñas, niños y adolescentes</li>
+            <li>Google Classroom y herramientas Google (Google Educator Groups)</li>
+            <li><b>2019</b> · Curso sobre temática de géneros (UBA)</li>
+            <li><b>2013</b> · Seguridad básica en Linux</li>
+            <li><b>2012</b> · Usos pedagógicos de aulas virtuales Moodle</li>
+          </ul>
+          <p class="note" style="margin-top:.9rem">Los cursos desde 2022 fueron gestionados por el INAP.</p>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ 06 · CONTACTO ============ -->
+<section id="contacto" style="border-bottom:none">
+  <div class="body"><div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <h2 class="sec-title">Contacto</h2>
+    </div>
+    <div class="cols">
+      <div class="c-list compact">
+        <a href="mailto:ramiro.naya@unipe.edu.ar"><span class="k">Mail</span>ramiro.naya@unipe.edu.ar</a>
+        <a href="mailto:ramiro.naya@educacion.gob.ar"><span class="k">Mail</span>ramiro.naya@educacion.gob.ar</a>
+        <a href="mailto:ramiro.naya@edu.bue.ar"><span class="k">Mail</span>ramiro.naya@edu.bue.ar</a>
+      </div>
+      <div class="c-list compact">
+        <a href="https://ar.linkedin.com/in/ramironaya" target="_blank" rel="noopener"><span class="k">LinkedIn</span>ramironaya</a>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<footer>Ramiro Naya — Buenos Aires · 2026 <a href="../creoquenaya/">NAYA · Música →</a></footer>
+
+<script>
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('nav.topnav ul a'));
+    var map = {}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    if(!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          if(map[e.target.id]) map[e.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function(id){ var s = document.getElementById(id); if(s) io.observe(s); });
+  })();
+</script>
+</body>
+</html>

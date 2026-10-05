@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clases — Ramiro Naya</title>
+<link rel="icon" type="image/png" href="assets/img/icon-mark.png">
+<meta name="description" content="Acceso a clases. Ingresá con tu clave.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4EFE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,450;1,9..144,450&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0a0a; --bg-raised:#15120f; --line:#2e2620;
+    --text:#f2ede4; --text-muted:#a89d8e; --text-faint:#6f665c;
+    --accent:#e8b04a; --accent-soft:#8a6c2f; --on-accent:#1a1408; --terra:#c14a63; --lede:#cbb389;
+    --font-display:"Fraunces",ui-serif,Georgia,serif;
+    --font-poster:"Anton",ui-sans-serif,sans-serif;
+    --font-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,"SF Mono",monospace;
+  }
+  body.acad{ --bg:#F4EFE6; --bg-raised:#EBE4D6; --line:#D9D1C3; --text:#1E1B18; --text-muted:#5F584F; --text-faint:#7A7368; --accent:#1F3A5F; --accent-soft:#8FA3BF; --on-accent:#F4EFE6; --terra:#B5563A; --lede:#3E3A34; }
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{ margin:0; min-height:100vh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; }
+  header.top{ border-bottom:1px solid var(--line); }
+  header.top .inner{ max-width:760px; margin:0 auto; padding:.9rem 1.4rem; display:flex; justify-content:space-between; align-items:center; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); }
+  header.top a{ text-decoration:none; }
+  header.top a:hover{ color:var(--accent); }
+  main{ flex:1; display:flex; align-items:center; }
+  .wrap{ max-width:760px; margin:0 auto; padding:3.5rem 1.4rem 5rem; width:100%; }
+  .eyebrow{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--accent); margin-bottom:.9rem; }
+  h1{ font-family:var(--font-poster); font-weight:400; text-transform:uppercase; font-size:clamp(3rem,12vw,5.6rem); line-height:.95; margin:0 0 1rem; overflow-wrap:anywhere; }
+  h1.long{ font-size:clamp(2rem,7vw,3.4rem); line-height:1.02; }
+  .bajada{ font-family:var(--font-display); font-style:italic; color:var(--lede); font-size:clamp(1.05rem,2.4vw,1.3rem); margin:0 0 2.2rem; max-width:34ch; }
+  form{ display:flex; flex-wrap:wrap; gap:.6rem; max-width:26rem; }
+  input{ flex:1 1 12rem; font:inherit; font-family:var(--font-mono); font-size:.95rem; color:var(--text); background:var(--bg-raised); border:1px solid var(--line); padding:.8rem 1rem; border-radius:0; }
+  input:focus{ outline:none; border-color:var(--accent-soft); }
+  button{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); background:transparent; border:1px solid var(--accent-soft); padding:.8rem 1.2rem; cursor:pointer; transition:background .15s,color .15s; }
+  button:hover{ background:var(--accent); color:var(--on-accent); }
+  .msg{ min-height:1.6rem; margin:.9rem 0 0; font-family:var(--font-mono); font-size:.78rem; color:var(--terra); }
+  .aside{ margin-top:2.6rem; padding-top:1.4rem; border-top:1px solid var(--line); font-size:.9rem; color:var(--text-muted); }
+  .aside a{ color:var(--accent); text-underline-offset:3px; }
+</style>
+</head>
+<body class="acad">
+  <header class="top"><div class="inner"><a id="back" href="./#clases">← Clases</a><span id="site">NAYA</span></div></header>
+  <main>
+    <div class="wrap">
+      <div class="eyebrow" id="eyebrow">Clases</div>
+      <h1 id="title">Clases</h1>
+      <p class="bajada">Ingresá con tu clave.</p>
+
+      <form id="f" autocomplete="off">
+        <input id="k" type="password" placeholder="tu clave" aria-label="Clave" required autofocus>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="msg" id="msg" role="status" aria-live="polite"></p>
+
+      <p class="aside">¿Todavía no tenés clave? Escribime a <a href="mailto:ramironaya@gmail.com">ramironaya@gmail.com</a>.</p>
+    </div>
+  </main>
+
+<script>
+  // Cada clase tiene su propia lista de claves (hash SHA-256 -> dirección de la clase).
+  var ACAD = "./#clases";
+  var CLASES = {
+    "sociologia":                  { eyebrow:"Clases · Sociología",  title:"Sociología", back:ACAD, site:"Ramiro Naya", accesos:{} },
+    "historia":                    { eyebrow:"Clases · Historia",    title:"Historia",   back:ACAD, site:"Ramiro Naya", accesos:{} },
+    "sistemas-productivos":        { eyebrow:"UNIPE", title:"Sistemas Productivos en Argentina", back:ACAD, site:"Ramiro Naya", accesos:{} },
+    "contexto-tendencias":         { eyebrow:"UNIPE", title:"Contexto y Tendencias de la Educación para el Trabajo", back:ACAD, site:"Ramiro Naya", accesos:{} },
+    "practicas-profesionalizantes":{ eyebrow:"UNIPE", title:"Prácticas Profesionalizantes", back:ACAD, site:"Ramiro Naya", accesos:{} }
+  };
+  var slug = (new URLSearchParams(location.search).get("m") || "").toLowerCase();
+  var clase = CLASES[slug] || { eyebrow:"Clases", title:"Clases", back:ACAD, site:"Ramiro Naya", accesos:{} };
+
+  document.title = clase.title + " — Clases";
+  document.getElementById("eyebrow").textContent = clase.eyebrow;
+  var h1 = document.getElementById("title"); h1.textContent = clase.title; if(clase.title.length > 16) h1.className = "long";
+  document.getElementById("back").setAttribute("href", clase.back);
+  document.getElementById("site").textContent = clase.site;
+  if(clase.site === "Ramiro Naya") document.body.classList.add("acad");
+
+  function sha256(text){
+    var data = new TextEncoder().encode(text);
+    return crypto.subtle.digest("SHA-256", data).then(function(buf){
+      return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ("0"+b.toString(16)).slice(-2); }).join("");
+    });
+  }
+  document.getElementById("f").addEventListener("submit", function(e){
+    e.preventDefault();
+    var msg = document.getElementById("msg");
+    var clave = document.getElementById("k").value.trim().toLowerCase();
+    if(!(window.crypto && crypto.subtle)){ msg.textContent = "Este navegador no permite verificar la clave."; return; }
+    sha256(clave).then(function(h){
+      var ir = clase.accesos[h];
+      if(ir){ msg.style.color = "var(--accent)"; msg.textContent = "Entrando…"; window.location.href = ir; }
+      else { msg.style.color = "var(--terra)"; msg.textContent = "Clave incorrecta."; }
+    });
+  });
+</script>
+</body>
+</html>
