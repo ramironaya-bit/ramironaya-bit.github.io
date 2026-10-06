@@ -121,6 +121,15 @@
   .chips li b{ font-weight:500; color:var(--text); }
   .block + .block{ margin-top:2rem; }
 
+  .evts{ list-style:none; margin:0 0 .4rem; padding:0; }
+  .evts li{ display:grid; grid-template-columns:5.2rem 1fr; gap:.1rem .9rem; padding:.7rem 0; border-top:1px solid var(--line-soft); }
+  .evts li:first-child{ border-top:none; }
+  .e-d{ grid-row:1 / span 2; font-family:var(--font-mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint); padding-top:.28rem; }
+  .e-t{ font-family:var(--font-display); font-size:1.02rem; line-height:1.3; }
+  .e-s{ font-size:.82rem; color:var(--text-muted); }
+  .e-s a{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft); }
+  .e-s a:hover{ color:var(--text); }
+
   footer{ text-align:center; padding:2rem 1.5rem 2.4rem; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-faint); }
   footer a{ color:var(--text-muted); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:.1rem; margin-left:.4rem; transition:color .15s,border-color .15s; }
   footer a:hover{ color:var(--accent); border-color:var(--accent-soft); }
@@ -216,12 +225,17 @@
       </div>
 
       <div>
-        <h3 class="gh">Congresos y registros</h3>
-        <a class="lk" href="https://congresos.untref.edu.ar/event/1/contributions/613/attachments/680/707/615.pdf" target="_blank" rel="noopener">
-          <span class="lk-t">Dispositivos pedagógicos y curriculares en la formación universitaria para la EFTP: aportes desde la UNIPE</span>
-          <span class="lk-d">Resumen aprobado, con Irma Briasco y Susana Ibañez. X Encuentro Nacional / VII Latinoamericano «La Universidad como Objeto de Investigación», UNTREF, 4 al 7 de agosto de 2026.</span>
-          <span class="lk-a">↗</span>
-        </a>
+        <h3 class="gh">Congresos y coloquios</h3>
+        <p class="note">Participación como expositor.</p>
+        <ul class="evts">
+          <li><span class="e-d">Sep 2026</span><span class="e-t">VI Coloquio de la SAIE, Mar del Plata</span><span class="e-s">Sociedad Argentina de Investigación en Educación · AT 06, Formación y Desarrollo Profesional Docente</span></li>
+          <li><span class="e-d">Ago 2026</span><span class="e-t">X Encuentro «La Universidad como Objeto de Investigación», UNTREF</span><span class="e-s">Con Irma Briasco y Susana Ibañez · <a href="https://congresos.untref.edu.ar/event/1/contributions/613/attachments/680/707/615.pdf" target="_blank" rel="noopener">Resumen ↗</a></span></li>
+          <li><span class="e-d">Ago 2026</span><span class="e-t">14.ª Semana UNIPE Virtual</span><span class="e-s">Edición invierno, eje Educación y Trabajo</span></li>
+          <li><span class="e-d">2025</span><span class="e-t">Semana Virtual UNIPE</span><span class="e-s">Con integrantes del equipo de investigación</span></li>
+          <li><span class="e-d">Ago 2025</span><span class="e-t">III Jornadas de Investigación en Política Educativa, UBA</span><span class="e-s">XIV Encuentro de Cátedras de Política, Planeamiento, Administración y Financiamiento de la Educación</span></li>
+        </ul>
+
+        <h3 class="gh" style="margin-top:2.2rem">Registros</h3>
         <a class="lk" href="https://unipe.edu.ar/cegopp/publicaciones" target="_blank" rel="noopener">
           <span class="lk-t">Publicaciones del CEGOPP</span>
           <span class="lk-d">UNIPE.</span>
