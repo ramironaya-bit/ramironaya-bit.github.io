@@ -59,6 +59,13 @@
   .title{ font-family:var(--font-poster); font-weight:400; text-transform:uppercase; line-height:1.16; letter-spacing:-.01em; font-size:clamp(3rem,10vw,7.2rem); margin:0; }
   .title .out{ color:transparent; -webkit-text-stroke:1.6px var(--accent); }
   .lede{ font-family:var(--font-display); font-style:italic; font-size:clamp(1.05rem,2.2vw,1.45rem); color:var(--lede); margin:1.2rem 0 0; max-width:38ch; }
+  .quick{ display:flex; flex-wrap:wrap; gap:.55rem .6rem; margin-top:2.2rem; }
+  .quick a{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); text-decoration:none; border:1px solid var(--accent-soft); padding:.55rem .95rem; transition:background .15s,color .15s; }
+  .quick a span{ margin-left:.25rem; }
+  .quick a:hover, .quick a:focus-visible{ background:var(--accent); color:var(--bg); border-color:var(--accent); }
+  .sec-head + .sec-intro{ margin-top:-1.4rem; }
+  .sec-intro{ font-family:var(--font-display); font-style:italic; font-size:1.02rem; line-height:1.5; color:var(--text-muted); max-width:62ch; margin:0 0 2.4rem; }
+  #formacion{ scroll-margin-top:4.5rem; }
   .bridge{ margin:2.2rem 0 0; max-width:60ch; color:var(--text-muted); border-left:2px solid var(--terra); padding-left:1rem; }
   .bridge a{ color:var(--accent); text-underline-offset:3px; }
 
@@ -156,7 +163,12 @@
     <div class="kicker">Sociología y educación</div>
     <h1 class="title">Ramiro<br><span class="out">Naya</span></h1>
     <p class="lede">Sociólogo por la Universidad de Buenos Aires. Docente, investigador y consultor en educación y formación técnico profesional.</p>
-    <p class="bridge">Interpelar a un grupo durante un tiempo compartido —un aula, un club, una investigación— es el oficio que atraviesa todo lo que hace. <a href="../creoquenaya/">Ver la parte de música →</a></p>
+    <nav class="quick" aria-label="Ir directo a">
+      <a href="#docencia">Docencia <span>↓</span></a>
+      <a href="#investigacion">Investigación <span>↓</span></a>
+      <a href="#consultoria">Consultoría <span>↓</span></a>
+      <a href="#formacion">Formación <span>↓</span></a>
+    </nav>
   </div>
 </header>
 
@@ -167,6 +179,7 @@
       <div class="sec-num">01</div>
       <h2 class="sec-title">Docencia</h2>
     </div>
+    <p class="sec-intro">Licenciado y Profesor en Sociología. Le apasiona la docencia y compartir conocimiento, desde la sociología, la historia, la educación e incluso la música.</p>
     <div class="cols photo-left">
       <figure class="photo polaroid"><img src="assets/img/academico-tinta.jpg" alt=""><figcaption>Encuentro académico</figcaption></figure>
       <div>
@@ -191,11 +204,8 @@
       <div class="sec-num">02</div>
       <h2 class="sec-title">Investigación</h2>
     </div>
+    <p class="sec-intro">Integrante de varios equipos de investigación desde su formación en sociología. En el último tiempo investiga, con un equipo de la UNIPE, sobre formación, trabajo, educación y educación técnico profesional (ETP).</p>
     <div class="cols">
-
-      <div class="c-wide">
-        <p class="note">Integrante del equipo de investigación en formación docente de la UNIPE.</p>
-      </div>
 
       <div>
         <h3 class="gh">Publicaciones</h3>
@@ -222,6 +232,14 @@
           <span class="lk-d">UNIPE junto a UOM La Matanza. Programa de la Secretaría de Políticas Universitarias (2021).</span>
           <span class="lk-a">↗</span>
         </a>
+        <div class="lk plain">
+          <span class="lk-t">Contradicción</span>
+          <span class="lk-d">Obra de teatro, junto a Mariana Palumbo (sociología) y Martina Kogan (danza), que indaga y entrelaza la sociología, la danza y la música: tres pasiones que atraviesan su trabajo. Planta, Buenos Aires, 2025.</span>
+          <span class="sub">
+            <a href="https://drive.google.com/file/d/10T8FaKnsPIIGjaqQOZij19DCg9YcCyVB/view?usp=drivesdk" target="_blank" rel="noopener">Dossier ↗</a>
+            <a href="https://plantainclan.com/eventos/contradiccion/" target="_blank" rel="noopener">Ficha de la obra ↗</a>
+          </span>
+        </div>
       </div>
 
       <div>
@@ -264,10 +282,8 @@
       <div class="sec-num">03</div>
       <h2 class="sec-title">Consultoría</h2>
     </div>
+    <p class="sec-intro">Desde 2011, consultor en organismos nacionales, jurisdiccionales e internacionales, y hace más de una década en las redes federales de Educación y Formación Técnico Profesional.</p>
     <div class="cols">
-      <div class="c-wide">
-        <p class="note">Desde 2011, consultor en organismos nacionales, jurisdiccionales e internacionales, y hace más de una década en las redes federales de Educación y Formación Técnico Profesional.</p>
-      </div>
       <div>
         <div class="lk plain">
           <span class="lk-t">Instituto Nacional de Educación Tecnológica (INET)</span>
@@ -343,7 +359,7 @@
         <a class="lk" href="https://drive.google.com/file/d/1nW0DKABsEHPIk9GHvWlO1ynRuEiXo630/view?usp=sharing" target="_blank" rel="noopener"><span class="lk-t">Docente</span><span class="lk-d">PDF</span><span class="lk-a">↗</span></a>
       </div>
       <div>
-        <h3 class="gh">Formación</h3>
+        <h3 class="gh" id="formacion">Formación</h3>
         <div class="lk plain"><span class="lk-t">Licenciatura en Sociología</span><span class="lk-m">2007 — 2013</span><span class="lk-d">Diploma de Honor. UBA, Facultad de Ciencias Sociales.</span></div>
         <div class="lk plain"><span class="lk-t">Profesorado de Sociología</span><span class="lk-m">2015 — 2016</span><span class="lk-d">Promedio 10. UBA, Facultad de Ciencias Sociales.</span></div>
         <div class="lk plain"><span class="lk-t">Maestría en Políticas y Administración de la Educación</span><span class="lk-m">2016 — 2019</span><span class="lk-d">UNTREF. Sin finalizar.</span></div>
